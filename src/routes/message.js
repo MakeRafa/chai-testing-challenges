@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 /** Route to get one message by id. */
 router.get('/:messageId', (req, res) => {
     // TODO: Get the Message object with id matching `req.params.id`
+    // adding text to commit
     // using `findOne`
 
     // TODO: Return the matching Message object as JSON
