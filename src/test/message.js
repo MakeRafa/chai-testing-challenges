@@ -47,25 +47,35 @@ describe('Message API endpoints', () => {
                 expect(res.body.users).to.be.an("array")
                 done()
             })
-        })
-
-        it('should get one specific message', (done) => {
-            // TODO: Complete this
-            done()
-        })
-
-        it('should post a new message', (done) => {
-            // TODO: Complete this
-            done()
-        })
-
-        it('should update a message', (done) => {
-            // TODO: Complete this
-            done()
-        })
-
-        it('should delete a message', (done) => {
-            // TODO: Complete this
-            done()
-        })
     })
+
+    it('should get one specific message', (done) => {
+        // TODO: Complete this
+        chai.request(app)
+            .get(`/messages/${MESSAGE_ID}`)
+            .end((err, res) => {
+                if (err) { done(err) }
+                expect(res).to.have.status(200)
+                expect(res.body).to.be.an('object')
+                expect(res.body.title).to.equal(message.title)
+                expect(res.body.body).to.equal(message.body)
+                expect(res.body.author).to.equal(message.author)
+                done()
+            })
+    })
+
+    it('should post a new message', (done) => {
+        // TODO: Complete this
+        done()
+    })
+
+    it('should update a message', (done) => {
+        // TODO: Complete this
+        done()
+    })
+
+    it('should delete a message', (done) => {
+        // TODO: Complete this
+        done()
+    })
+})
