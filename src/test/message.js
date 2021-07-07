@@ -18,11 +18,11 @@ chai.use(chaiHttp)
  * root level hooks
  */
 after((done) => {
-  // required because https://github.com/Automattic/mongoose/issues/1251#issuecomment-65793092
-  mongoose.models = {}
-  mongoose.modelSchemas = {}
-  mongoose.connection.close()
-  done()
+    // required because https://github.com/Automattic/mongoose/issues/1251#issuecomment-65793092
+    mongoose.models = {}
+    mongoose.modelSchemas = {}
+    mongoose.connection.close()
+    done()
 })
 
 
@@ -39,26 +39,33 @@ describe('Message API endpoints', () => {
 
     it('should load all messages', (done) => {
         // TODO: Complete this
-        done()
-    })
+        chai.request(app)
+            .get('/messages')
+            .end((err, res) => {
+                if (err) { done(err) }
+                expect(res).to.have.status(200)
+                expect(res.body.users).to.be.an("array")
+                done()
+            })
+        })
 
-    it('should get one specific message', (done) => {
-        // TODO: Complete this
-        done()
-    })
+        it('should get one specific message', (done) => {
+            // TODO: Complete this
+            done()
+        })
 
-    it('should post a new message', (done) => {
-        // TODO: Complete this
-        done()
-    })
+        it('should post a new message', (done) => {
+            // TODO: Complete this
+            done()
+        })
 
-    it('should update a message', (done) => {
-        // TODO: Complete this
-        done()
-    })
+        it('should update a message', (done) => {
+            // TODO: Complete this
+            done()
+        })
 
-    it('should delete a message', (done) => {
-        // TODO: Complete this
-        done()
+        it('should delete a message', (done) => {
+            // TODO: Complete this
+            done()
+        })
     })
-})
